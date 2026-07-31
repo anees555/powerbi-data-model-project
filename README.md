@@ -210,7 +210,7 @@ The `security` table maps each user's email to a region. A `'Regional Access'` r
  
 ## Repository Structure
 ```
-project_nightmare_datamodel/
+powerbi-data-model-project/
 ├── README.md
 │
 ├── docs/
