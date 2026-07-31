@@ -1,0 +1,54 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 01_stage
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 02_Dimensions
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 03_Facts
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 04_Support
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Address","CAMPAIGN_LOG","campaign_skus","cities","CUST_MASTER","customer_contacts","exchange_rates","inventory","invoice_lines","INVOICES","order_line_items","ORDERS_2025","ORDERS_2026","payments","products","regions","sales_targets","security","shipments","subcategories","user_details","dim_customer","dim_product","orders","dim_order_flag","channels","fact_sales_target","fact_order_process","fact_sales","dim_geo","fact_inventory","dim_campaign","fact_campaign_spend","fact_promotion_coverage"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_45498525-d229-4d57-bdf6-0cff90e3d2d8
+ref table security
+ref table dim_customer
+ref table dim_product
+ref table dim_order_flag
+ref table fact_sales
+ref table dim_geo
+ref table fact_inventory
+ref table dim_campaign
+ref table LocalDateTable_c62fe173-cba4-4dba-a4b1-54c9410a0514
+ref table LocalDateTable_59665a45-1531-4602-afed-3e4fdc5812a3
+ref table fact_campaign_spend
+ref table fact_promotion_coverage
+ref table fact_order_process
+ref table fact_sales_target
+ref table dim_date
+ref table LocalDateTable_bc24ed3b-1126-4575-87f8-780a1e67caa6
+ref table _measures
+
+ref role 'Regional Access'
+
+ref cultureInfo en-US
+

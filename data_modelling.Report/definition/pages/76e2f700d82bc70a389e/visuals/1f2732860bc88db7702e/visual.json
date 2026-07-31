@@ -1,0 +1,156 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "1f2732860bc88db7702e",
+  "position": {
+    "x": 34.444444444444443,
+    "y": 68.888888888888886,
+    "z": 0,
+    "height": 481.11111111111109,
+    "width": 578.88888888888891,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_date"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "dim_date.Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Date Year"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_date"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "dim_date.Date.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Date Quarter"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "dim_date"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "dim_date.Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Date Month"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_sales"
+                        }
+                      },
+                      "Property": "line_total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_sales.line_total)",
+              "nativeQueryRef": "Sum of line_total"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_sales_target"
+                        }
+                      },
+                      "Property": "target_revenue"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_sales_target.target_revenue)",
+              "nativeQueryRef": "Sum of target_revenue"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_inventory"
+                        }
+                      },
+                      "Property": "units"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_inventory.units)",
+              "nativeQueryRef": "Sum of units"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
